@@ -25,10 +25,10 @@ public class ProductPage {
     private WebElement productPrice;
 
     @FindBy(xpath = "//*[text()='Добавить в корзину']")
-    private WebElement buttonBucket;
+    private WebElement buttonBasket;
 
     @FindBy(xpath = "(//*[text()='В корзине'])[2]")
-    private WebElement buttonInBucket;
+    private WebElement buttonInBasket;
 
     @Step("Получение названия товара")
     public String getProductName() {
@@ -42,14 +42,14 @@ public class ProductPage {
 
     @Step("Кликнуть В корзину")
     public ProductPage clickButtonBasket() {
-        buttonBucket.click();
+        buttonBasket.click();
         return this;
     }
 
     @Step("Кликнуть В корзине")
     public ProductPage clickButtonInBasket() {
         new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.elementToBeClickable(buttonInBucket))
+                .until(ExpectedConditions.elementToBeClickable(buttonInBasket))
                 .click();
         return this;
     }
