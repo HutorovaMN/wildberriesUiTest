@@ -41,13 +41,13 @@ public class ProductPage {
     }
 
     @Step("Кликнуть В корзину")
-    public ProductPage clickButtonBucket() {
+    public ProductPage clickButtonBasket() {
         buttonBucket.click();
         return this;
     }
 
     @Step("Кликнуть В корзине")
-    public ProductPage clickButtonInBucket() {
+    public ProductPage clickButtonInBasket() {
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.elementToBeClickable(buttonInBucket))
                 .click();

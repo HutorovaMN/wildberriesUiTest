@@ -3,7 +3,7 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import pages.BucketPage;
+import pages.BasketPage;
 import pages.ProductPage;
 
 @Owner("Хуторова Марина")
@@ -11,21 +11,21 @@ import pages.ProductPage;
 @Feature("US-1 Тестовое задание")
 public class ProductTest extends BaseTest {
     private final ProductPage productPage = new ProductPage();
-    private final BucketPage bucketPage = new BucketPage();
+    private final BasketPage basketPage = new BasketPage();
 
     @Test(description = "Добавление товара в корзину")
     public void checkPutProductInBucketTest() {
         String productName = productPage.getProductName();
         String productPrice = productPage.getProductPrice();
 
-        productPage.clickButtonBucket().clickButtonInBucket();
+        productPage.clickButtonBasket().clickButtonInBasket();
 
-        String bucketProductName = bucketPage.getBucketProductName();
-        String bucketProductPrice = bucketPage.getBucketProductPrice();
+        String basketProductName = basketPage.getBasketProductName();
+        String basketProductPrice = basketPage.getBasketProductPrice();
 
-        new SoftAssert() {{
-            assertEquals(bucketProductName, productName, "Название товара изменилось!");
-            assertEquals(bucketProductPrice, productPrice, "Цена товара изменилась!");
-        }}.assertAll();
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(basketProductName, productName, "Название товара изменилось!");
+        softAssert.assertEquals(basketProductPrice, productPrice, "Цена товара изменилась!");
+        softAssert.assertAll();
     }
 }
