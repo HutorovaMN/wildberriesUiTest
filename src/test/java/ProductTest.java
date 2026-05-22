@@ -14,7 +14,7 @@ public class ProductTest extends BaseTest {
     private final BasketPage basketPage = new BasketPage();
 
     @Test(description = "Добавление товара в корзину")
-    public void checkPutProductInBucketTest() {
+    public void checkPutProductInBasketTest() {
         String productName = productPage.getProductName();
         String productPrice = productPage.getProductPrice();
 
