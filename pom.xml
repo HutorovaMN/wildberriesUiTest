@@ -17,7 +17,6 @@
         <testng.version>7.10.2</testng.version>
         <aspectj.version>1.9.22</aspectj.version>
         <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
-        <projectlombok.version>1.18.32</projectlombok.version>
     </properties>
 
     <dependencies>
